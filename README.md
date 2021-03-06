@@ -1,69 +1,58 @@
 # PPE-KIT Detection
 
-# Complete Product-System Design Setup for Real-time Person with PPE-Kit Detection
+### Domain- Safety Inspection
 
-## CostVsAccuracyVsPerformanceVsTime
+### Problem- To avoid the entrance of unauthorised people in restricted area or non-compliance of PPE equipments.
 
-## New developments-Alwaysai-demo-L&T
+## The Application is designed to classify the video frame in three categories based on two PPE items- Helmet and Vest
 
-- Custom Client/Front end with alwaysai and extra add-ons for alert
-    - [ ]  Custom streamer
-    - [ ]  Sound alert javascript
-    - Mail service smtp
-    - Text service twilio
-    - Logs + triggered media strorage
-- Multiple models integration
-    - [x]  Person - yolo_v4_416_tiny_nano
-    - Helmet + Vest
-        - Accuracy improvement with ppe detection
-            - [ ]  Retrain on Another dataset- person, head, helmet
-- Performance improvement
+1. Person without PPE
+2. Person with Incomplete PPE( either helmet is missing or vest ) 
+3. Person with complete PPE
 
-### Issues/Errors
+## Steps-
 
-- resizing on shoes dataset-
-    - Error: Error: marker was not found
-    - $ aai dataset resize --target-dir zipped_cleaned_cut2_.zip --output-dir resized300x300.zip
-    info: Resizing images and annotations.
-- Resizing on helmet dataset
-    - Error: Error: EMFILE: too many open files, open 'extractedDir/JPEGImages/hard_hat_workers4665.jpg'
-    - $ aai dataset resize --target-dir zipped.zip --output-dir zipped_resized_helmet.zip
-- Training
-    - faster_rcnn retraining error
+### Data Collection- Dataset
 
-## Software-Setup
+In our case we are using already available dataset from kaggle.
 
-- [ ]  network connection startup script vs all-time background script wlan0
-- [ ]  Send IP on every boot/new connection script
-- [x]  Manual
-    - [x]  Mobile Hotspot
-    - [ ]  LAN/WLAN
-- [ ]  App Startup script
-- [x]  Live detection alerts
-    - [x]  Visual
-    - [ ]  Audio?
-- [x]  IP Spit-out
-    - [x]  Front end app web address
-- [x]  ssh tunneling check for
-    - [x]  Wifi Telecom
-- [ ]  Auto fan turn on script
-- [ ]  Alert Texting/Email
-- [ ]  Logs, Video, Image writer( serve the logs)
+Labels: 
 
-## WIFI Connection script
+1. Helmet
+2. Vest
 
-- [ ]  search for the available networks
-- [ ]  select and connect to the required network
-- [ ]  login (iiti) curl -d "auth_user=me170003058&auth_pass=VAIBHAV799912&accept=Sign In" [http://10.100.100.253:8002/index.php?zone=iiti_auth](http://10.100.100.253:8002/index.php?zone=iiti_auth)
-- [ ]  make it a startup or background service
+[Hardhat and Safety Vest Image for Object Detection](https://www.kaggle.com/johnsyin97/hardhat-and-safety-vest-image-for-object-detection)
 
-## Insights
+### Model Training
 
-### Performance concerns
+Model: mobilenet_ssd
 
-- System based-
-    - CPU, GPU, RAM, DISK etc.
-- Networking based
-    - Low latency connections
-- Development Based
-    - Optimized environments
+Input Image size: 300x300 
+
+Epochs: 10
+
+We are using a framework called alwaysai model training toolkit to train the model
+
+for more details: 
+
+[Model Training - alwaysAI Documentation documentation](https://alwaysai.co/docs/model_training/index.html)
+
+### Model Serving and Deployment
+
+We are using same framework for deployment.
+
+The model is deployed to an Edge Device by Nvidia- Jetson Nano
+
+ 
+
+### Lab Testing
+
+[https://www.youtube.com/watch?v=KNP3VJxXlSg&ab_channel=VaibhavDalmia](https://www.youtube.com/watch?v=KNP3VJxXlSg&ab_channel=VaibhavDalmia)
+
+### Plant Testing
+
+![PPE-KIT%20Detection%207b3ac90b3c8f4c39a2c4b3c20e5b3ccb/7.png](PPE-KIT%20Detection%207b3ac90b3c8f4c39a2c4b3c20e5b3ccb/7.png)
+
+![PPE-KIT%20Detection%207b3ac90b3c8f4c39a2c4b3c20e5b3ccb/8.png](PPE-KIT%20Detection%207b3ac90b3c8f4c39a2c4b3c20e5b3ccb/8.png)
+
+[]()
