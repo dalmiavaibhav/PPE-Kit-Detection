@@ -47,12 +47,10 @@ The model is deployed to an Edge Device by Nvidia- Jetson Nano
 
 ### Lab Testing
 
-[https://www.youtube.com/watch?v=KNP3VJxXlSg&ab_channel=VaibhavDalmia](https://www.youtube.com/watch?v=KNP3VJxXlSg&ab_channel=VaibhavDalmia)
+![media/ppe_kit2.gif](media/ppe_kit2.gif)
 
 ### Plant Testing
 
-![PPE-KIT%20Detection%207b3ac90b3c8f4c39a2c4b3c20e5b3ccb/7.png](PPE-KIT%20Detection%207b3ac90b3c8f4c39a2c4b3c20e5b3ccb/7.png)
+![media/7.png](media/7.png)
 
-![PPE-KIT%20Detection%207b3ac90b3c8f4c39a2c4b3c20e5b3ccb/8.png](PPE-KIT%20Detection%207b3ac90b3c8f4c39a2c4b3c20e5b3ccb/8.png)
-
-[]()
+![media/8.png](media/8.png)
