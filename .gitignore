@@ -1,0 +1,6 @@
+#Directories
+venv/
+models/
+
+#Files 
+*.zip

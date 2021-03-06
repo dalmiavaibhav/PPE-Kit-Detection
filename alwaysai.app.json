@@ -1,0 +1,8 @@
+{
+  "models": {
+    "vaibhavdalmia/vest_hardhat": 1
+  },
+  "scripts": {
+    "start": "python app.py"
+  }
+}
